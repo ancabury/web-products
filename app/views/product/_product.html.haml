@@ -1,0 +1,8 @@
+#accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+  .panel.panel-default
+    #headingOne.panel-heading{:role => "tab"}
+      .panel-title{ value: product.id }
+        %p{ remote: true, "aria-controls" => "notif#{product.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse" }
+          = "#{ product.name }"
+    .panel-collapse.collapse{"aria-labelledby" => "headingOne", :role => "tabpanel", id: "notif#{product.id}"}
+      .panel-body

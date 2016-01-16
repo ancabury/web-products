@@ -1,0 +1,27 @@
+.container-fluid
+  #table
+    - if @favorites.any?
+      %table.table.table-bordered.table-hover
+        %thead
+        %tr
+          %th Name
+          %th Description
+          %th Price
+        %tbody
+          - @favorites.each do |fav|
+            %tr
+              %td
+                = fav.name
+              %td
+                = fav.description
+              %td
+                = fav.price
+
+  %h1
+    Produtcs
+
+  - if @products
+    - @products.each do |prod|
+      = render partial: 'product', locals: { product: prod }
+  - else
+    There are no products in the database.
