@@ -20,7 +20,9 @@
 $(document).ready(function() {
   $('.panel-title').hover(function(){
     $(this).parent().siblings('.panel-collapse').toggleClass('in');
+  });
 
+  $('.panel-title').mouseenter(function(){
     var path = '/product/' + $(this).attr('value');
     $.ajax({
       type: 'GET',
